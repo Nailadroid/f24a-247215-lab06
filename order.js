@@ -79,3 +79,17 @@ const itemName = document.getElementById('item').value.trim();
     document.getElementById('count').textContent = orderHistory.length;
     document.getElementById('takings').textContent = totalTakings;
 }
+dropBtn.addEventListener('click', () => {
+        if (orderHistory.length === 0) return;
+
+        const droppedOrder = orderHistory.pop();
+        const currentTicketId = document.getElementById('ticket-id').textContent;
+
+        if (String(droppedOrder.orderId) === String(currentTicketId)) {
+            document.getElementById('ticket-id').textContent = '';
+            document.getElementById('ticket-item').textContent = '';
+            document.getElementById('ticket-total').textContent = '';
+        }
+
+        renderSheet();
+    });
