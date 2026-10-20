@@ -57,6 +57,9 @@ const itemName = document.getElementById('item').value.trim();
             }
         } catch (err) {
 statusElem.textContent = 'The server is not answering.';        }
+finally {
+            sendBtn.disabled = false;
+        }
         function renderSheet() {
     const sheetBody = document.getElementById('sheet');
     sheetBody.innerHTML = '';
