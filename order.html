@@ -26,6 +26,13 @@
                     </tr>
                 </thead>
                 <tbody id="sheet"></tbody>
+                <form id="order">
+            <input type="text" id="item" name="item" required>
+            <input type="text" id="qty" name="qty" required>
+
+            <button id="send" type="submit">Send</button>
+            <button id="drop" type="button">Drop last</button>
+        </form>
             </table>
             <p>Count: <span id="count">0</span></p>
             <p>Takings: <span id="takings">0</span></p>
