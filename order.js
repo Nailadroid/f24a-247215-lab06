@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const orderForm = document.getElementById('order');
     const dropBtn = document.getElementById('drop');
 
-    orderForm.addEventListener('submit', (e) => {
+    orderForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const qtyInput = document.getElementById('qty');
         const statusElem = document.getElementById('status');
+        const sendBtn = document.getElementById('send');
 
         qtyInput.setCustomValidity('');
 
@@ -20,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             statusElem.textContent = 'not a number';
             return;
         }
+        statusElem.textContent = 'Loading…';
+        sendBtn.disabled = true;
     });
 
     dropBtn.addEventListener('click', () => {
