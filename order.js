@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropBtn = document.getElementById('drop');
 
     orderForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+e.preventDefault();
         const qtyInput = document.getElementById('qty');
         const statusElem = document.getElementById('status');
         const sendBtn = document.getElementById('send');
@@ -56,8 +56,7 @@ const itemName = document.getElementById('item').value.trim();
                 statusElem.textContent = `Order ${data.orderId}, total ${data.total}`;
             }
         } catch (err) {
-            // Error handling in Topic 12
-        }
+statusElem.textContent = 'The server is not answering.';        }
         function renderSheet() {
     const sheetBody = document.getElementById('sheet');
     sheetBody.innerHTML = '';
@@ -100,3 +99,4 @@ dropBtn.addEventListener('click', () => {
                     statusElem.textContent = `${itemName} is not in the shop`;
                 }
             }
+      
