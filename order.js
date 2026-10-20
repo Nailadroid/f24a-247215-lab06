@@ -93,3 +93,10 @@ dropBtn.addEventListener('click', () => {
 
         renderSheet();
     });
+
+    if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                if (response.status === 404 || errData.error === 'not in shop') {
+                    statusElem.textContent = `${itemName} is not in the shop`;
+                }
+            }
